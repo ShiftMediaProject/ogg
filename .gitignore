@@ -166,6 +166,7 @@ $RECYCLE.BIN/
 Makefile
 Makefile.in
 config.*
+config_types.h
 stamp*
 libtool
 aclocal.m4
