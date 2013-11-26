@@ -169,6 +169,9 @@
     </Lib>
     <PostBuildEvent>
       <Command>mkdir $(OutputPath)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+)
 mkdir $(OutputPath)\include\ogg
 copy ..\include\ogg\*.h $(OutputPath)\include\ogg
 mkdir $(OutputPath)\licenses
@@ -205,6 +208,9 @@ del ..\include\ogg\config_types.h
     </Lib>
     <PostBuildEvent>
       <Command>mkdir $(OutputPath)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+)
 mkdir $(OutputPath)\include\ogg
 copy ..\include\ogg\*.h $(OutputPath)\include\ogg
 mkdir $(OutputPath)\licenses
@@ -242,6 +248,9 @@ del ..\include\ogg\config_types.h
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutputPath)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+)
 mkdir $(OutputPath)\include\ogg
 copy ..\include\ogg\*.h $(OutputPath)\include\ogg
 mkdir $(OutputPath)\licenses
@@ -279,6 +288,9 @@ del ..\include\ogg\config_types.h
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutputPath)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+)
 mkdir $(OutputPath)\include\ogg
 copy ..\include\ogg\*.h $(OutputPath)\include\ogg
 mkdir $(OutputPath)\licenses
@@ -327,6 +339,9 @@ del ..\include\ogg\config_types.h
     </Lib>
     <PostBuildEvent>
       <Command>mkdir $(OutputPath)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+)
 mkdir $(OutputPath)\include\ogg
 copy ..\include\ogg\*.h $(OutputPath)\include\ogg
 mkdir $(OutputPath)\licenses
@@ -375,6 +390,9 @@ del ..\include\ogg\config_types.h
     </Lib>
     <PostBuildEvent>
       <Command>mkdir $(OutputPath)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+)
 mkdir $(OutputPath)\include\ogg
 copy ..\include\ogg\*.h $(OutputPath)\include\ogg
 mkdir $(OutputPath)\licenses
@@ -424,6 +442,9 @@ del ..\include\ogg\config_types.h
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutputPath)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+)
 mkdir $(OutputPath)\include\ogg
 copy ..\include\ogg\*.h $(OutputPath)\include\ogg
 mkdir $(OutputPath)\licenses
@@ -473,6 +494,9 @@ del ..\include\ogg\config_types.h
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutputPath)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+)
 mkdir $(OutputPath)\include\ogg
 copy ..\include\ogg\*.h $(OutputPath)\include\ogg
 mkdir $(OutputPath)\licenses
