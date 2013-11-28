@@ -112,40 +112,44 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
     <TargetName>liboggd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
     <TargetName>liboggd</TargetName>
+    <OutDir>..\..\..\msvc64\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
     <TargetName>oggd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
     <TargetName>oggd</TargetName>
+    <OutDir>..\..\..\msvc64\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
     <TargetName>libogg</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
     <TargetName>libogg</TargetName>
+    <OutDir>..\..\..\msvc64\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
     <TargetName>ogg</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
     <TargetName>ogg</TargetName>
+    <OutDir>..\..\..\msvc64\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -163,17 +167,17 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <OutputFile>$(OutDir)\lib\msvc32\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
       <TargetMachine>MachineX86</TargetMachine>
       <SubSystem>Windows</SubSystem>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-if exist $(OutDir)\include\msvc\ogg (
-rd /s /q $(OutDir)\include\msvc\ogg
+      <Command>mkdir $(OutDir)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
 )
-mkdir $(OutDir)\include\msvc\ogg
-copy ..\include\ogg\*.h $(OutDir)\include\msvc\ogg
+mkdir $(OutDir)\include\ogg
+copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
     </PostBuildEvent>
@@ -202,17 +206,17 @@ del ..\include\ogg\config_types.h
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <OutputFile>$(OutDir)\lib\msvc64\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
       <TargetMachine>MachineX64</TargetMachine>
       <SubSystem>Windows</SubSystem>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-if exist $(OutDir)\include\msvc\ogg (
-rd /s /q $(OutDir)\include\msvc\ogg
+      <Command>mkdir $(OutDir)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
 )
-mkdir $(OutDir)\include\msvc\ogg
-copy ..\include\ogg\*.h $(OutDir)\include\msvc\ogg
+mkdir $(OutDir)\include\ogg
+copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
     </PostBuildEvent>
@@ -239,20 +243,20 @@ del ..\include\ogg\config_types.h
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(OutDir)\bin\msvc32\$(TargetName)$(TargetExt)</OutputFile>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc32\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>$(OutDir)\lib\msvc32\$(TargetName).lib</ImportLibrary>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc32\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <ModuleDefinitionFile>..\win32\ogg.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-if exist $(OutDir)\include\msvc\ogg (
-rd /s /q $(OutDir)\include\msvc\ogg
+      <Command>mkdir $(OutDir)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
 )
-mkdir $(OutDir)\include\msvc\ogg
-copy ..\include\ogg\*.h $(OutDir)\include\msvc\ogg
+mkdir $(OutDir)\include\ogg
+copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
     </PostBuildEvent>
@@ -279,20 +283,20 @@ del ..\include\ogg\config_types.h
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(OutDir)\bin\msvc64\$(TargetName)$(TargetExt)</OutputFile>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc64\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>$(OutDir)\lib\msvc64\$(TargetName).lib</ImportLibrary>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc64\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <ModuleDefinitionFile>..\win32\ogg.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-if exist $(OutDir)\include\msvc\ogg (
-rd /s /q $(OutDir)\include\msvc\ogg
+      <Command>mkdir $(OutDir)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
 )
-mkdir $(OutDir)\include\msvc\ogg
-copy ..\include\ogg\*.h $(OutDir)\include\msvc\ogg
+mkdir $(OutDir)\include\ogg
+copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
     </PostBuildEvent>
@@ -333,17 +337,17 @@ del ..\include\ogg\config_types.h
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <OutputFile>$(OutDir)\lib\msvc32\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
       <TargetMachine>MachineX86</TargetMachine>
       <SubSystem>Windows</SubSystem>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-if exist $(OutDir)\include\msvc\ogg (
-rd /s /q $(OutDir)\include\msvc\ogg
+      <Command>mkdir $(OutDir)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
 )
-mkdir $(OutDir)\include\msvc\ogg
-copy ..\include\ogg\*.h $(OutDir)\include\msvc\ogg
+mkdir $(OutDir)\include\ogg
+copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
     </PostBuildEvent>
@@ -384,17 +388,17 @@ del ..\include\ogg\config_types.h
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <OutputFile>$(OutDir)\lib\msvc64\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
       <TargetMachine>MachineX64</TargetMachine>
       <SubSystem>Windows</SubSystem>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-if exist $(OutDir)\include\msvc\ogg (
-rd /s /q $(OutDir)\include\msvc\ogg
+      <Command>mkdir $(OutDir)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
 )
-mkdir $(OutDir)\include\msvc\ogg
-copy ..\include\ogg\*.h $(OutDir)\include\msvc\ogg
+mkdir $(OutDir)\include\ogg
+copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
     </PostBuildEvent>
@@ -433,20 +437,20 @@ del ..\include\ogg\config_types.h
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>$(OutDir)\bin\msvc32\$(TargetName)$(TargetExt)</OutputFile>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc32\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>$(OutDir)\lib\msvc32\$(TargetName).lib</ImportLibrary>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc32\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <ModuleDefinitionFile>..\win32\ogg.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-if exist $(OutDir)\include\msvc\ogg (
-rd /s /q $(OutDir)\include\msvc\ogg
+      <Command>mkdir $(OutDir)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
 )
-mkdir $(OutDir)\include\msvc\ogg
-copy ..\include\ogg\*.h $(OutDir)\include\msvc\ogg
+mkdir $(OutDir)\include\ogg
+copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
     </PostBuildEvent>
@@ -485,20 +489,20 @@ del ..\include\ogg\config_types.h
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>$(OutDir)\bin\msvc64\$(TargetName)$(TargetExt)</OutputFile>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc64\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>$(OutDir)\lib\msvc64\$(TargetName).lib</ImportLibrary>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc64\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <ModuleDefinitionFile>..\win32\ogg.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-if exist $(OutDir)\include\msvc\ogg (
-rd /s /q $(OutDir)\include\msvc\ogg
+      <Command>mkdir $(OutDir)\include
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
 )
-mkdir $(OutDir)\include\msvc\ogg
-copy ..\include\ogg\*.h $(OutDir)\include\msvc\ogg
+mkdir $(OutDir)\include\ogg
+copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
     </PostBuildEvent>
