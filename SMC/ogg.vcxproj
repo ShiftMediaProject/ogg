@@ -173,9 +173,6 @@
     </Lib>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
-if exist $(OutDir)\include\ogg (
-rd /s /q $(OutDir)\include\ogg
-)
 mkdir $(OutDir)\include\ogg
 copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
@@ -187,6 +184,11 @@ del ..\config.h
 )
 if exist ..\include\ogg\config_types.h (
 del ..\include\ogg\config_types.h
+)
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -212,9 +214,6 @@ del ..\include\ogg\config_types.h
     </Lib>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
-if exist $(OutDir)\include\ogg (
-rd /s /q $(OutDir)\include\ogg
-)
 mkdir $(OutDir)\include\ogg
 copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
@@ -226,6 +225,11 @@ del ..\config.h
 )
 if exist ..\include\ogg\config_types.h (
 del ..\include\ogg\config_types.h
+)
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -251,9 +255,6 @@ del ..\include\ogg\config_types.h
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
-if exist $(OutDir)\include\ogg (
-rd /s /q $(OutDir)\include\ogg
-)
 mkdir $(OutDir)\include\ogg
 copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
@@ -265,6 +266,11 @@ del ..\config.h
 )
 if exist ..\include\ogg\config_types.h (
 del ..\include\ogg\config_types.h
+)
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -290,9 +296,6 @@ del ..\include\ogg\config_types.h
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
-if exist $(OutDir)\include\ogg (
-rd /s /q $(OutDir)\include\ogg
-)
 mkdir $(OutDir)\include\ogg
 copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
@@ -304,6 +307,11 @@ del ..\config.h
 )
 if exist ..\include\ogg\config_types.h (
 del ..\include\ogg\config_types.h
+)
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -341,9 +349,6 @@ del ..\include\ogg\config_types.h
     </Lib>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
-if exist $(OutDir)\include\ogg (
-rd /s /q $(OutDir)\include\ogg
-)
 mkdir $(OutDir)\include\ogg
 copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
@@ -355,6 +360,11 @@ del ..\config.h
 )
 if exist ..\include\ogg\config_types.h (
 del ..\include\ogg\config_types.h
+)
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -392,9 +402,6 @@ del ..\include\ogg\config_types.h
     </Lib>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
-if exist $(OutDir)\include\ogg (
-rd /s /q $(OutDir)\include\ogg
-)
 mkdir $(OutDir)\include\ogg
 copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
@@ -406,6 +413,11 @@ del ..\config.h
 )
 if exist ..\include\ogg\config_types.h (
 del ..\include\ogg\config_types.h
+)
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -443,9 +455,6 @@ del ..\include\ogg\config_types.h
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
-if exist $(OutDir)\include\ogg (
-rd /s /q $(OutDir)\include\ogg
-)
 mkdir $(OutDir)\include\ogg
 copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
@@ -457,6 +466,11 @@ del ..\config.h
 )
 if exist ..\include\ogg\config_types.h (
 del ..\include\ogg\config_types.h
+)
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -494,9 +508,6 @@ del ..\include\ogg\config_types.h
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
-if exist $(OutDir)\include\ogg (
-rd /s /q $(OutDir)\include\ogg
-)
 mkdir $(OutDir)\include\ogg
 copy ..\include\ogg\*.h $(OutDir)\include\ogg
 mkdir $(OutDir)\licenses
@@ -508,6 +519,11 @@ del ..\config.h
 )
 if exist ..\include\ogg\config_types.h (
 del ..\include\ogg\config_types.h
+)
+if exist $(OutDir)\include\ogg (
+rd /s /q $(OutDir)\include\ogg
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
