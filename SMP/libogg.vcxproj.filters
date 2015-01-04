@@ -31,7 +31,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\win32\ogg.def">
+    <None Include="libogg.def">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
