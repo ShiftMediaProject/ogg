@@ -708,6 +708,7 @@ del /f /q $(OutDir)\licenses\ogg.txt
       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
       <ModuleDefinitionFile>libogg.def</ModuleDefinitionFile>
       <LargeAddressAware>true</LargeAddressAware>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -771,6 +772,7 @@ del /f /q $(OutDir)\licenses\ogg.txt
       <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
       <ModuleDefinitionFile>libogg.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
