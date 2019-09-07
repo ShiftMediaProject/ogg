@@ -29,6 +29,9 @@
     <ClInclude Include="..\include\ogg\os_types.h">
       <Filter>Header Files\ogg</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\crctable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="libogg.def">
