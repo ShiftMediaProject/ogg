@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}</ProjectGuid>
+    <ProjectGuid>{AC2315EC-E08C-4E8F-AD66-917DC9C30B98}</ProjectGuid>
     <RootNamespace>ogg</RootNamespace>
   </PropertyGroup>
   <ImportGroup Label="PropertySheets">
-    <Import Project="smp.props" />
+    <Import Project="smp_winrt.props" />
     <Import Project="libogg_files.props" />
   </ImportGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -45,7 +45,7 @@ del /f /q $(OutDir)\licenses\ogg.txt
 )</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -82,48 +82,7 @@ del /f /q $(OutDir)\licenses\ogg.txt
 )</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
-    <ClCompile>
-      <PreprocessorDefinitions>LIBOGG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <ModuleDefinitionFile>libogg.def</ModuleDefinitionFile>
-    </Link>
-    <PostBuildEvent>
-      <Command>mkdir "$(OutDir)"\include
-mkdir "$(OutDir)"\include\ogg
-copy ..\include\ogg\*.h "$(OutDir)"\include\ogg
-mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>if exist ..\config.h (
-del ..\config.h
-)
-if exist ..\include\ogg\config_types.h (
-del ..\include\ogg\config_types.h
-)
-if exist "$(OutDir)"\include\ogg (
-rd /s /q "$(OutDir)"\include\ogg
-cd ../
-cd $(ProjectDir)
-)</Command>
-    </PreBuildEvent>
-    <CustomBuildStep>
-      <Message>Custom Clean Step</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>force_clean</Outputs>
-      <Command>if exist "$(OutDir)"\include\ogg (
-rmdir /s /q "$(OutDir)"\include\ogg
-)
-if exist $(OutDir)\licenses\ogg.txt (
-del /f /q $(OutDir)\licenses\ogg.txt
-)</Command>
-    </CustomBuildStep>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>LIBOGG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -164,81 +123,7 @@ del /f /q $(OutDir)\licenses\ogg.txt
 )</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <PostBuildEvent>
-      <Command>mkdir "$(OutDir)"\include
-mkdir "$(OutDir)"\include\ogg
-copy ..\include\ogg\*.h "$(OutDir)"\include\ogg
-mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>if exist ..\config.h (
-del ..\config.h
-)
-if exist ..\include\ogg\config_types.h (
-del ..\include\ogg\config_types.h
-)
-if exist "$(OutDir)"\include\ogg (
-rd /s /q "$(OutDir)"\include\ogg
-cd ../
-cd $(ProjectDir)
-)</Command>
-    </PreBuildEvent>
-    <CustomBuildStep>
-      <Message>Custom Clean Step</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>force_clean</Outputs>
-      <Command>if exist "$(OutDir)"\include\ogg (
-rmdir /s /q "$(OutDir)"\include\ogg
-)
-if exist $(OutDir)\licenses\ogg.txt (
-del /f /q $(OutDir)\licenses\ogg.txt
-)</Command>
-    </CustomBuildStep>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <PostBuildEvent>
-      <Command>mkdir "$(OutDir)"\include
-mkdir "$(OutDir)"\include\ogg
-copy ..\include\ogg\*.h "$(OutDir)"\include\ogg
-mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>if exist ..\config.h (
-del ..\config.h
-)
-if exist ..\include\ogg\config_types.h (
-del ..\include\ogg\config_types.h
-)
-if exist "$(OutDir)"\include\ogg (
-rd /s /q "$(OutDir)"\include\ogg
-cd ../
-cd $(ProjectDir)
-)</Command>
-    </PreBuildEvent>
-    <CustomBuildStep>
-      <Message>Custom Clean Step</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>force_clean</Outputs>
-      <Command>if exist "$(OutDir)"\include\ogg (
-rmdir /s /q "$(OutDir)"\include\ogg
-)
-if exist $(OutDir)\licenses\ogg.txt (
-del /f /q $(OutDir)\licenses\ogg.txt
-)</Command>
-    </CustomBuildStep>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|x64'">
     <ClCompile>
       <PreprocessorDefinitions>LIBOGG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -279,7 +164,122 @@ del /f /q $(OutDir)\licenses\ogg.txt
 )</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\ogg
+copy ..\include\ogg\*.h "$(OutDir)"\include\ogg
+mkdir $(OutDir)\licenses
+copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)
+if exist ..\include\ogg\config_types.h (
+del ..\include\ogg\config_types.h
+)
+if exist "$(OutDir)"\include\ogg (
+rd /s /q "$(OutDir)"\include\ogg
+cd ../
+cd $(ProjectDir)
+)</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Message>Custom Clean Step</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>force_clean</Outputs>
+      <Command>if exist "$(OutDir)"\include\ogg (
+rmdir /s /q "$(OutDir)"\include\ogg
+)
+if exist $(OutDir)\licenses\ogg.txt (
+del /f /q $(OutDir)\licenses\ogg.txt
+)</Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\ogg
+copy ..\include\ogg\*.h "$(OutDir)"\include\ogg
+mkdir $(OutDir)\licenses
+copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)
+if exist ..\include\ogg\config_types.h (
+del ..\include\ogg\config_types.h
+)
+if exist "$(OutDir)"\include\ogg (
+rd /s /q "$(OutDir)"\include\ogg
+cd ../
+cd $(ProjectDir)
+)</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Message>Custom Clean Step</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>force_clean</Outputs>
+      <Command>if exist "$(OutDir)"\include\ogg (
+rmdir /s /q "$(OutDir)"\include\ogg
+)
+if exist $(OutDir)\licenses\ogg.txt (
+del /f /q $(OutDir)\licenses\ogg.txt
+)</Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>LIBOGG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>libogg.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\ogg
+copy ..\include\ogg\*.h "$(OutDir)"\include\ogg
+mkdir $(OutDir)\licenses
+copy ..\COPYING $(OutDir)\licenses\ogg.txt</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)
+if exist ..\include\ogg\config_types.h (
+del ..\include\ogg\config_types.h
+)
+if exist "$(OutDir)"\include\ogg (
+rd /s /q "$(OutDir)"\include\ogg
+cd ../
+cd $(ProjectDir)
+)</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Message>Custom Clean Step</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>force_clean</Outputs>
+      <Command>if exist "$(OutDir)"\include\ogg (
+rmdir /s /q "$(OutDir)"\include\ogg
+)
+if exist $(OutDir)\licenses\ogg.txt (
+del /f /q $(OutDir)\licenses\ogg.txt
+)</Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|x64'">
     <ClCompile>
       <PreprocessorDefinitions>LIBOGG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>.\;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ecaeff62-f1fa-48a0-b20b-dd3debb8da9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{e09258d9-bc0f-4c9e-858c-8c9db4814a8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{448a5453-dd55-4f1c-b7ae-e5a20d2c1be7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ogg">
+      <UniqueIdentifier>{64bf6fab-510a-4d87-8a0c-2a6abf81643a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\bitwise.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\framing.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ogg\ogg.h">
+      <Filter>Header Files\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ogg\os_types.h">
+      <Filter>Header Files\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\crctable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libogg.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
